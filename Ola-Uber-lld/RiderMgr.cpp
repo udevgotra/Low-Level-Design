@@ -6,11 +6,11 @@ std::mutex RiderMgr::mux;
 
 RiderMgr* RiderMgr::getRiderMgrInstance(){
     if(riderMgrInstance==nullptr){
-        mtx.lock();
+        mux.lock();
         if(riderMgrInstance==nullptr){
             riderMgrInstance = new RiderMgr();
         }
-        mtx.unlock();
+        mux.unlock();
     }
     return riderMgrInstance;
 }

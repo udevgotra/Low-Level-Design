@@ -7,7 +7,7 @@
 class RiderMgr{
     RiderMgr(){}
     static RiderMgr* riderMgrInstance;
-    static std::mutex mtx;
+    static std::mutex mux;
     std::unordered_map<std::string,Rider*> ridersMap;
 public:
     static RiderMgr* getRiderMgrInstance();

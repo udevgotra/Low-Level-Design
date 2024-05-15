@@ -1,3 +1,4 @@
+#pragma once
 #include "DriverMgr.hpp"
 
 DriverMgr* DriverMgr::driverMgrInstance=nullptr;
@@ -9,6 +10,7 @@ DriverMgr* DriverMgr::getDriverMgrInstance(){
         if(driverMgrInstance==nullptr){
             driverMgrInstance=new DriverMgr();
         }
+        mux.unlock();
     }
     return driverMgrInstance;
 }
